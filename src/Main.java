@@ -3,6 +3,9 @@ import java.util.Scanner;
 // Clase principal
 public class Main {
     public static void main(String[] args) {
+        showMenu();
+    }
+    public static void showMenu() {   
         Scanner scanner = new Scanner(System.in);
         String opcion;
 
@@ -15,31 +18,28 @@ public class Main {
         //Interfaz en consola
         while (true) {
             System.out.println("--------------------------------------");
-            System.out.println("Acciones con el deck");
-            System.out.println("1 = Shufle");
-            System.out.println("2 = Head");
-            System.out.println("3 = Pick");
-            System.out.println("4 = Hand");
-            System.out.println("5 = Mostrar cartas del deck");
-            System.out.println("6 = Salir");
+            System.out.println("Bienvenido a Poker!");
+            System.out.println("Selecciona una opción:");
+            System.out.println("1 Mezclar deck");
+            System.out.println("2 Sacar una carta");
+            System.out.println("3 Carta al azar");
+            System.out.println("4 Generar una mano de 5 cartas");
+            System.out.println("5 Mostrar cartas del deck");
+            System.out.println("6 Salir");
             System.out.println("--------------------------------------");
             opcion = scanner.nextLine();
 
             switch (opcion) {
                 case "1":
-                    System.out.println(">Shufle");
                     deck.shuffle();
                     break;
                 case "2":
-                    System.out.println(">Head");
                     deck.head();
                     break;
                 case "3":
-                    System.out.println(">Pick");
                     deck.pick();
                     break;
                 case "4":
-                    System.out.println(">Hand");
                     deck.hand();
                     break;
                 case "5":
@@ -53,9 +53,10 @@ public class Main {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Selecciona una opcion valida");
+                    System.out.println("Opción no válida");
             }
 
         }
     }
 }
+
